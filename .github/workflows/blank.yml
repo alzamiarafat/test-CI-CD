@@ -32,6 +32,6 @@ jobs:
         uses: alzamiarafat/FTP-Deploy-Action@4.1.0
         with:
           server: ftp.thinkwhatnext.click
-          username: ${{ alzamiarafat@thinkwhatnext.click }}
-          password: ${{ alzamiarafat##00 }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           server-dir: /home/thinkwha/alzamiarafat.thinkwhatnext.click/
