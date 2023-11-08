@@ -30,6 +30,7 @@ jobs:
       - uses: actions/checkout@v1
 
       # Runs a single command using the runners shell
+      - name: Sync files
         uses: alzamiarafat/test-CI-CD
         with:
           server: ftp.thinkwhatnext.click
