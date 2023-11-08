@@ -29,7 +29,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        uses: alzamiarafat/FTP-Deploy-Action@4.1.0
+        uses: alzamiarafat/test-CI-CD@4.1.0
         with:
           server: ftp.thinkwhatnext.click
           username: ${{ secrets.USERNAME }}
