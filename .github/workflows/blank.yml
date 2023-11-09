@@ -1,39 +1,23 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the workflow will run
-on:
+on: 
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    
+name: 🚀 Deploy website on push
 jobs:
-  # This workflow contains a single job called "build"
   web-deploy:
-    name: Deploy
-      
-    # The type of runner that the job will run on
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Get lastest code
-      
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v1
-
-      # Runs a single command using the runners shell
-      - name: Sync files
-        uses: alzamiarafat/test-CI-CD
-        with:
-          server: ftp.thinkwhatnext.click
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          server-dir: /home/thinkwha/thinkwhatnext.click/zami
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.thinkwhatnext.click
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        server-dir: /home/thinkwha/thinkwhatnext.click/zami
