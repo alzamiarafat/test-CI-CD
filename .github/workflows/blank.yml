@@ -20,4 +20,4 @@ jobs:
         server: ftp.thinkwhatnext.click
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        server-dir: /home/thinkwha/thinkwhatnext.click/zami
+        server-dir: /home/thinkwha/thinkwhatnext.click/zami/
